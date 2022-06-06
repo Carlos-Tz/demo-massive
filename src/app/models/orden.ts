@@ -25,6 +25,8 @@ export interface Orden {
     luces: boolean;
     estabi: boolean;
     temper: boolean;
+    potosi: boolean;
+    qualitas: boolean;
     /* tall: boolean;
     presion: boolean;
     volante: boolean; */
@@ -59,6 +61,10 @@ export interface Orden {
     img6: string;
     img7: string;
     img8: string;
+    img9: string;
+    img10: string;
+    img11: string;
+    img12: string;
     img1n: string;
     img2n: string;
     img3n: string;
@@ -67,6 +73,10 @@ export interface Orden {
     img6n: string;
     img7n: string;
     img8n: string;
+    img9n: string;
+    img10n: string;
+    img11n: string;
+    img12n: string;
     desc1: string;
     desc2: string;
     desc3: string;

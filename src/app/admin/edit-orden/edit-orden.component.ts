@@ -61,6 +61,8 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
   public lig = false;
   public sta = false;
   public tem = false;
+  public pot = false;
+  public qua = false;
   /* public tal = false;
   public pre = false;
   public vol = false; */
@@ -79,6 +81,10 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
   public filePathI6 = '';
   public filePathI7 = '';
   public filePathI8 = '';
+  public filePathI9 = '';
+  public filePathI10 = '';
+  public filePathI11 = '';
+  public filePathI12 = '';
   public filePathf1 = '';
   public filePathf2 = '';
   public filePathf3 = '';
@@ -172,6 +178,12 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
       if (this.myForm.get('temper').value) {
         this.tem = this.myForm.get('temper').value;
       }
+      if (this.myForm.get('potosi').value) {
+        this.pot = this.myForm.get('potosi').value;
+      }
+      if (this.myForm.get('qualitas').value) {
+        this.qua = this.myForm.get('qualitas').value;
+      }
       if (this.myForm.get('lock').value) {
         this.lock = true;
       }
@@ -225,6 +237,8 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
       luces: [false],
       estabi: [false],
       temper: [false],
+      potosi: [false],
+      qualitas: [false],
       /* tall: [false],
       presion: [false],
       volante: [false], */
@@ -259,6 +273,10 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
       img6: [''],
       img7: [''],
       img8: [''],
+      img9: [''],
+      img10: [''],
+      img11: [''],
+      img12: [''],
       img1n: [''],
       img2n: [''],
       img3n: [''],
@@ -267,6 +285,10 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
       img6n: [''],
       img7n: [''],
       img8n: [''],
+      img9n: [''],
+      img10n: [''],
+      img11n: [''],
+      img12n: [''],
       desc1: [''],
       desc2: [''],
       desc3: [''],
@@ -355,6 +377,14 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
   temper_() {
     this.tem = !this.tem;
     this.myForm.patchValue({temper: this.tem});
+  }
+  potosi_() {
+    this.pot = !this.pot;
+    this.myForm.patchValue({potosi: this.pot});
+  }
+  qualitas_() {
+    this.qua = !this.qua;
+    this.myForm.patchValue({qualitas: this.qua});
   }
   /* tall_() {
     this.tal = !this.tal;
@@ -582,6 +612,74 @@ export class EditOrdenComponent implements OnInit, AfterViewInit {
             fileRef.getDownloadURL().subscribe((url) => {
               this.myForm.patchValue({img8: url});
               this.myForm.patchValue({img1n: this.filePathI8});
+              this.toastr.success('Imagen cargada correctamente!');
+            });
+          })
+        ).subscribe();
+      }
+      if (inputValue.name === 'img9') {
+        if (this.filePathI9 !== '') {
+          const ref = this.storage.ref(this.filePathI9);
+          ref.delete();
+        }
+        this.filePathI9 = `images_servicar/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathI9);
+        this.storage.upload(this.filePathI9, this.uploadedImage).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({img9: url});
+              this.myForm.patchValue({img1n: this.filePathI9});
+              this.toastr.success('Imagen cargada correctamente!');
+            });
+          })
+        ).subscribe();
+      }
+      if (inputValue.name === 'img10') {
+        if (this.filePathI10 !== '') {
+          const ref = this.storage.ref(this.filePathI10);
+          ref.delete();
+        }
+        this.filePathI10 = `images_servicar/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathI10);
+        this.storage.upload(this.filePathI10, this.uploadedImage).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({img10: url});
+              this.myForm.patchValue({img1n: this.filePathI10});
+              this.toastr.success('Imagen cargada correctamente!');
+            });
+          })
+        ).subscribe();
+      }
+      if (inputValue.name === 'img11') {
+        if (this.filePathI11 !== '') {
+          const ref = this.storage.ref(this.filePathI11);
+          ref.delete();
+        }
+        this.filePathI11 = `images_servicar/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathI11);
+        this.storage.upload(this.filePathI11, this.uploadedImage).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({img11: url});
+              this.myForm.patchValue({img1n: this.filePathI11});
+              this.toastr.success('Imagen cargada correctamente!');
+            });
+          })
+        ).subscribe();
+      }
+      if (inputValue.name === 'img12') {
+        if (this.filePathI12 !== '') {
+          const ref = this.storage.ref(this.filePathI12);
+          ref.delete();
+        }
+        this.filePathI12 = `images_servicar/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathI12);
+        this.storage.upload(this.filePathI12, this.uploadedImage).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({img12: url});
+              this.myForm.patchValue({img1n: this.filePathI12});
               this.toastr.success('Imagen cargada correctamente!');
             });
           })

@@ -23,13 +23,17 @@
               <div class="datos">
                 <h6 *ngIf="!myForm.value.presupuesto" style="font-weight: 600; margin: 0;">NOTA DE VENTA</h6>
                 <h6 *ngIf="myForm.value.presupuesto" style="font-weight: 600; margin: 0;">PRESUPUESTO</h6>
-                <p style="font-size: 1rem; font-weight:600; ">SERVICAR</p>
-                <!-- <h5 style="font-weight: 600; margin-top: 0 !important; margin-bottom: 0.3rem !important;">SERVICAR</h5> -->
-                <p>SERVICIO MECÁNICO AUTOMOTRIZ</p>
-                <p>Periférico Paseo de la República #1538</p>
-                <p>Col. El Realito Morelia Mich.</p>
-                <p>Tel. 443 261 9950</p>
-                <p>gilbert_mechanic@hotmail.com</p>
+                <h6 style="font-weight: 600; margin-top: 0 !important; margin-bottom: 0 !important;">MASSIVE AUTO COLLISION</h6>
+                <p>Manantial de agua fría No. 30A <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">location_on</span></p>
+                <p>Col. Ampliación Manantiales</p>
+                <p>CP. 58188 Morelia Mich.</p>
+                <div style="display:inline-flex;">
+                  <div>
+                    <p>443 310 1054 <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">phone</span> | 443 846 9605</p></div>
+                  <div>
+                    <img style="height: 1.3rem; padding-left: 0.1rem;" src="https://img.icons8.com/color/48/undefined/whatsapp--v1.png"/>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col s4" style="font-size: 0.7rem; font-weight: 600;">
@@ -408,6 +412,159 @@
             </div>
           </div>
           </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <div class="inner">
+          <div style="height: 12.97cm; border: 1px solid #9e9e9e; padding-top: 1rem;">
+            <div class="row">
+              <div class="col s4">
+                <img src="assets/logo.jpeg" alt="" style="width: 100%;">
+              </div>
+              <div class="col s4">
+                <div class="datos">
+                  <h6 style="font-weight: 600; margin: 0;">RECIBO DE INGRESO</h6>
+                  <p style="font-size: 1rem; font-weight:600; ">MASSIVE AUTO COLLISION</p>
+                </div>
+              </div>
+              <div class="col s4" style="font-size: 0.7rem; font-weight: 600;">
+                <div class="row">
+                  <div class="col s6 right-align" style=" padding-right: 0;">
+                    FOLIO:
+                  </div>
+                  <div class="col s6">
+                    <input type="text" id="orden" formControlName="orden" class="right-align" style="height: 1rem; color: red; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s6 right-align" style=" padding-right: 0;">
+                    FECHA:
+                  </div>
+                  <div class="col s6">
+                    <input type="text" id="fecha" formControlName="fecha" class="right-align" style="height: 1rem; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="margin-top: .5rem !important;">
+              <div class="col s12">
+                <div class="row">
+                  <div class="col s12">
+                    Datos de quien recibe el auto
+                  </div>
+                </div>
+                <div class="row">                
+                  <div class="col s1">
+                    Nombre:
+                  </div>
+                  <div class="col s6 pr0" style="display: none;" id="nameC">
+                    <input type="text" value="{{nameC}}">
+                  </div>
+                  <div class="col s5 pr0 no-print">
+                    <input formControlName="nombre" type="text" readonly>
+                  </div>
+                  <div class="col s1 pr0 pl0 no-print box">
+                    <select name="nombre" id="nombre" style="height: 1rem !important; margin: 0 0 8px 0; border: none !important; background-color: #e4e6e5;" (change)="nameS($event)">
+                      <option value=""></option>
+                      <option *ngFor="let form of forms" value="{{form.$key}}">{{form.nombre}}</option>
+                    </select>
+                  </div>
+                  <!-- <div class="col s6">
+                    <input type="text" autofocus tabindex="1" class="focusNext form-control-plaintext" formControlName="nombre">
+                  </div> -->
+                  <div class="col s1">
+                    Teléfono:
+                  </div>
+                  <div class="col s4">
+                    <input type="text" autofocus tabindex="2" class="focusNext form-control-plaintext" formControlName="tel" readonly>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s1">
+                    Domicilio:
+                  </div>
+                  <div class="col s11">
+                    <input type="text" tabindex="3" class="focusNext" formControlName="domicilio" readonly>                  
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s1">
+                    Unidad:
+                  </div>
+                  <div class="col s5">
+                    <input type="text" tabindex="4" class="focusNext" formControlName="unidad">
+                  </div>
+                  <div class="col s1">
+                    Modelo:
+                  </div>
+                  <div class="col s5">
+                    <input type="text" tabindex="5" class="focusNext" formControlName="modelo">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s1">
+                    Kilometraje:
+                  </div>
+                  <div class="col s3">
+                    <input type="text" tabindex="6" class="focusNext" formControlName="km">
+                  </div>
+                  <div class="col s1">
+                    Placa:
+                  </div>
+                  <div class="col s3">
+                    <input type="text" tabindex="7" class="focusNext" formControlName="placas">
+                  </div>
+                  <div class="col s1">
+                    Serie:
+                  </div>
+                  <div class="col s3">
+                    <input type="text" tabindex="8" class="focusNext" formControlName="serie">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s2">
+                    Observaciones:
+                  </div>
+                  <div class="col s10">
+                    <input type="text" tabindex="9" class="focusNext" formControlName="observ">
+                  </div>
+                </div>              
+              </div>
+            </div>
+          </div>
+          
+          <div class="row" style="height: 12.97cm; border: 1px solid #9e9e9e; padding-top: 1rem;">
+            <div class="col s4">
+              <img src="assets/logo.jpeg" alt="" style="width: 100%;">
+            </div>
+            <div class="col s4">
+              <div class="datos">
+                <h6 style="font-weight: 600; margin: 0;">VALE DE REFACCIÓN PENDIENTE</h6>
+                <p style="font-size: 1rem; font-weight:600; ">MASSIVE AUTO COLLISION</p>
+              </div>
+            </div>
+            <div class="col s4" style="font-size: 0.7rem; font-weight: 600;">
+              <div class="row">
+                <div class="col s6 right-align" style=" padding-right: 0;">
+                  FOLIO:
+                </div>
+                <div class="col s6">
+                  <input type="text" id="orden" formControlName="orden" class="right-align" style="height: 1rem; color: red; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6 right-align" style=" padding-right: 0;">
+                  FECHA:
+                </div>
+                <div class="col s6">
+                  <input type="text" id="fecha" formControlName="fecha" class="right-align" style="height: 1rem; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { Call } from 'src/app/models/call';
 
 @Component({
   selector: 'app-edit-register',
@@ -14,7 +13,6 @@ export class EditRegisterComponent implements OnInit {
   save = 2;
   myForm: FormGroup;
   key = '';
-  calls: Call[];
   folio = 0;
   @ViewChild('modalC') modalC: TemplateRef<any>;
   @ViewChild('modalC2') modalC2: TemplateRef<any>;
