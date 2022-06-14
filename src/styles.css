@@ -518,7 +518,7 @@ margin-top: 0 !important;
 margin-bottom: 0 !important;
 }
 
-input[type=text], input[type=date] {
+input[type=text], input[type=date], input[type=number] {
 height: 1rem !important;
 font-family: var(--font) !important;
 font-size: .85rem !important;
@@ -609,7 +609,7 @@ max-width: 100%;
 
 input[type=file] {
 width: 8cm;
-height: 5.5cm;
+height: 7.5cm;
 }
 
 #sub_title{

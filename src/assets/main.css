@@ -42,10 +42,10 @@ canvas {
   cursor: pointer;
 }
 
-#contSign, .signature, #contSign2, #contSign3, #contSign4 {
+#contSign, .signature, #contSign2, #contSign3, #contSign4, #contSign5 {
   text-align:center; width:240px; height: 70px;
 }
-#imgSign, #imgSign2, #imgSign3, #imgSign4{
+#imgSign, #imgSign2, #imgSign3, #imgSign4, #imgSign5{
   max-width: 100%;
   max-height: 100%;
 }

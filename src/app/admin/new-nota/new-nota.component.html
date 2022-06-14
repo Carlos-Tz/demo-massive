@@ -23,8 +23,8 @@
               <div class="datos">
                 <h6 *ngIf="!myForm.value.presupuesto" style="font-weight: 600; margin: 0;">NOTA DE VENTA</h6>
                 <h6 *ngIf="myForm.value.presupuesto" style="font-weight: 600; margin: 0;">PRESUPUESTO</h6>
-                <h6 style="font-weight: 600; margin-top: 0 !important; margin-bottom: 0 !important;">MASSIVE AUTO COLLISION</h6>
-                <p>Manantial de agua fría No. 30A <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">location_on</span></p>
+                <h6 style="font-weight: 600; margin-top: 0.5rem !important; margin-bottom: 0 !important; font-size: 0.9rem;">MASSIVE AUTO COLLISION</h6>
+                <p>Manantial de agua fría No. 30-A <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">location_on</span></p>
                 <p>Col. Ampliación Manantiales</p>
                 <p>CP. 58188 Morelia Mich.</p>
                 <div style="display:inline-flex;">
@@ -147,136 +147,172 @@
             <div class="col s12">
               <table class="tt1" formArrayName="units">
                 <tr>
-                  <th style="width: 2cm;">CANTIDAD</th>
+                  <th style="width: 8cm;">DESCRIPCIÓN DE LA REFACCIÓN</th>
+                  <th style="width: 3cm;">REFACCIONES</th>
+                  <th style="width: 3cm;">HOJALATERIA</th>
+                  <th style="width: 3cm;">PINTURA</th>
                   <!-- <th style="width: 2.5cm;">NO. DE PARTE</th> -->
-                  <th style="width: 12cm;">DESCRIPCIÓN DE LA REFACCIÓN</th>
-                  <th style="width: 3cm;">PRECIO</th>
+                  <!-- <th style="width: 3cm;">PRECIO</th> -->
                   <th>IMPORTE</th>
                 </tr>
                 <tr [formGroupName]="0">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="13" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="10" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="11" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="12" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="13" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="14" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="15" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="16" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="16" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="1">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="17" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="14" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="15" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="16" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="18" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="18" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="19" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="20" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="20" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="2">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="21" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="19" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="20" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="21" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="22" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="22" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="23" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="24" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="24" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="3">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="25" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="23" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="24" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="25" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="26" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="26" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="27" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="28" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="28" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="4">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="29" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="27" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="28" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="29" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="30" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="30" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="31" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="32" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="32" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="5">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="33" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="31" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="32" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="33" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="34" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="34" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="35" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="36" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="36" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="6">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="37" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="35" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="36" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="37" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="38" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="38" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="39" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="40" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="40" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="7">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="41" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="39" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="40" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="41" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="42" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="42" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="43" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="44" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="44" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="8">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="45" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="43" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="44" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="45" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="46" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="46" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="47" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="48" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="48" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="9">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="49" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="47" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="48" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="49" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="50" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="50" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="51" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="52" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="52" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="10">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="53" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="51" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="52" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="53" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="54" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="54" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="55" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="56" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="56" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="11">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="57" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="55" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="56" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="57" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="58" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="58" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="59" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="60" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="60" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="12">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="61" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="59" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="60" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="61" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="62" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="62" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="63" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="64" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="64" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="13">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="65" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="63" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="64" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="65" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="66" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="66" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="67" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="68" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="68" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="14">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="69" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="67" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="68" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="69" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="70" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="70" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="71" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="72" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="72" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="15">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="73" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="71" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="72" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="73" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="74" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="74" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="75" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="76" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="76" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
                 <tr [formGroupName]="16" style="border: 1px solid #9e9e9e;">
-                  <td class="br-1"><input type="number" min="0" formControlName="cantidad" tabindex="77" class="focusNext"></td>
+                  <td class="br-1"><input type="text" formControlName="desc" tabindex="75" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="refacciones" tabindex="76" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="hojalateria" tabindex="77" class="focusNext"></td>
+                  <td class="br-1"><input type="number" min="0" formControlName="pintura" tabindex="78" class="focusNext"></td>
                   <!-- <td><input type="text" formControlName="noparte" tabindex="78" class="focusNext"></td> -->
-                  <td class="br-1"><input type="text" formControlName="desc" tabindex="79" class="focusNext"></td>
-                  <td class="br-1"><input type="number" formControlName="importe" tabindex="80" class="focusNext"></td>
+                  <!-- <td class="br-1"><input type="number" formControlName="importe" tabindex="80" class="focusNext"></td> -->
                   <td><input type="text" formControlName="subtotal"></td>
                 </tr>
               </table>
               <table id="total__">
                 <tr style="border-bottom: 0;">
                   <td style="width: 14cm;">
-                    <p style="text-align: left;">Al firmar de conformidad acepto a mi entera satisfacción el servicio que estoy contratando de manera profesional con Servicar. Así, como sus términos y condiciones.</p>
+                    <p style="text-align: left;">Al firmar de conformidad acepto a mi entera satisfacción el servicio que estoy contratando de manera profesional con Massive Auto Collision. Así, como sus términos y condiciones.</p>
                   </td>
                   <!-- <td style="width: 11.5cm;"></td> -->
                   <!-- <td style="background-color: #ededed; width: 3cm;" class="right-align">REFACCIONES: $</td>
@@ -426,7 +462,7 @@
               </div>
               <div class="col s4">
                 <div class="datos">
-                  <h6 style="font-weight: 600; margin: 0;">RECIBO DE INGRESO</h6>
+                  <h6 style="font-weight: 600; margin: 0;">RECIBO DE DINERO</h6>
                   <p style="font-size: 1rem; font-weight:600; ">MASSIVE AUTO COLLISION</p>
                 </div>
               </div>
@@ -436,7 +472,7 @@
                     FOLIO:
                   </div>
                   <div class="col s6">
-                    <input type="text" id="orden" formControlName="orden" class="right-align" style="height: 1rem; color: red; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
+                    <input type="text" class="right-align" style="height: 1rem; color: red; font-size: .8rem; font-weight: 700; border-bottom: 0;" value="{{this.myForm.value.orden}}" readonly>
                   </div>
                 </div>
                 <div class="row">
@@ -444,124 +480,177 @@
                     FECHA:
                   </div>
                   <div class="col s6">
-                    <input type="text" id="fecha" formControlName="fecha" class="right-align" style="height: 1rem; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
+                    <input type="text" class="right-align" style="height: 1rem; font-size: .8rem; font-weight: 700; border-bottom: 0;" value="{{this.myForm.value.fecha}}" readonly>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row" style="margin-top: .5rem !important;">
               <div class="col s12">
+                <!-- <div class="row">
+                  <div class="col s12">
+                    <h6 style="font-size: 1rem;">DATOS DE QUIEN RECIBE EL VEHÍCULO</h6>
+                  </div>
+                </div> -->
+                <div class="row" style="padding-top: 3rem;">                
+                  <div class="col s4" style="padding-right: 0;">
+                    Massive Auto Collision Recibió de:
+                  </div>
+                  <div class="col s8" style="padding-left: 0;">
+                    <input type="text" formControlName="nombre" readonly>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s2">
+                    la cantidad de $:
+                  </div>
+                  <div class="col s2">
+                    <input type="number" formControlName="cant_num">
+                  </div>
+                  <div class="col s2">
+                    con letra:
+                  </div>
+                  <div class="col s6">
+                    <input type="text" formControlName="cant_let">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s2">
+                    con domicilio en: 
+                  </div>
+                  <div class="col s10">
+                    <input type="text" value="{{this.myForm.value.domicilio}}" readonly>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s2">
+                    y el contacto: 
+                  </div>
+                  <div class="col s10">
+                    <input type="text" value="{{this.myForm.value.tel}}" readonly>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col s2">
+                    Observaciones:
+                  </div>
+                  <div class="col s10">
+                    <input type="text" formControlName="observ_r">
+                  </div>
+                </div>   
+                <div class="row" style="margin-bottom: 1.2rem !important; padding-top: 4rem;">
+                  <div class="col s6">
+                    <div class="signature">
+                      <div id="contSign3">
+                        <img src="" id="imgSign3">
+                        <!-- <img src="" id="imgSign"> -->
+                      </div>
+                      <hr>
+                      {{ this.myForm.value.nombre }}
+                    </div>
+                  </div>
+                  <div class="col s6">
+                    <div class="signature">
+                      <div id="contSign2" onclick="btn_click2()">
+                        <img src="" id="imgSign2" (load)="imgChanged2($event)">
+                        <!-- <img src="" id="imgSign2"> -->
+                      </div>
+                      <hr>
+                      <p>
+                        MASSIVE AUTO COLLISION
+                      </p>
+                    </div>
+                  </div>
+                </div>           
+              </div>
+            </div>
+          </div>
+          
+          <div class="row" style="height: 12.97cm; border: 1px solid #9e9e9e; padding-top: 1rem;">
+            <div class="row">
+              <div class="col s4">
+                <img src="assets/logo.jpeg" alt="" style="width: 100%;">
+              </div>
+              <div class="col s4">
+                <div class="datos">
+                  <h6 style="font-weight: 600; margin: 0;">VALE DE REFACCIÓN PENDIENTE</h6>
+                  <p style="font-size: 1rem; font-weight:600; ">MASSIVE AUTO COLLISION</p>
+                </div>
+              </div>
+              <div class="col s4" style="font-size: 0.7rem; font-weight: 600;">
+                <div class="row">
+                  <div class="col s6 right-align" style=" padding-right: 0;">
+                    FOLIO:
+                  </div>
+                  <div class="col s6">
+                    <input type="text" class="right-align" style="height: 1rem; color: red; font-size: .8rem; font-weight: 700; border-bottom: 0;" value="{{this.myForm.value.orden}}" readonly>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col s6 right-align" style=" padding-right: 0;">
+                    FECHA:
+                  </div>
+                  <div class="col s6">
+                    <input type="text" class="right-align" style="height: 1rem; font-size: .8rem; font-weight: 700; border-bottom: 0;" value="{{this.myForm.value.fecha}}" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s12">
                 <div class="row">
                   <div class="col s12">
-                    Datos de quien recibe el auto
+                    <h6 style="font-size: 1rem;">SOLICITA:</h6>
                   </div>
                 </div>
                 <div class="row">                
                   <div class="col s1">
                     Nombre:
                   </div>
-                  <div class="col s6 pr0" style="display: none;" id="nameC">
-                    <input type="text" value="{{nameC}}">
-                  </div>
-                  <div class="col s5 pr0 no-print">
-                    <input formControlName="nombre" type="text" readonly>
-                  </div>
-                  <div class="col s1 pr0 pl0 no-print box">
-                    <select name="nombre" id="nombre" style="height: 1rem !important; margin: 0 0 8px 0; border: none !important; background-color: #e4e6e5;" (change)="nameS($event)">
-                      <option value=""></option>
-                      <option *ngFor="let form of forms" value="{{form.$key}}">{{form.nombre}}</option>
-                    </select>
-                  </div>
-                  <!-- <div class="col s6">
-                    <input type="text" autofocus tabindex="1" class="focusNext form-control-plaintext" formControlName="nombre">
-                  </div> -->
-                  <div class="col s1">
-                    Teléfono:
-                  </div>
-                  <div class="col s4">
-                    <input type="text" autofocus tabindex="2" class="focusNext form-control-plaintext" formControlName="tel" readonly>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s1">
-                    Domicilio:
-                  </div>
                   <div class="col s11">
-                    <input type="text" tabindex="3" class="focusNext" formControlName="domicilio" readonly>                  
+                    <input type="text" value="{{this.myForm.value.nombre}}" readonly>
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 2rem;">
+                  <div class="col s12">
+                    <h6 style="font-size: 1rem;">REFACCIONES:</h6>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col s1">
-                    Unidad:
-                  </div>
-                  <div class="col s5">
-                    <input type="text" tabindex="4" class="focusNext" formControlName="unidad">
-                  </div>
-                  <div class="col s1">
-                    Modelo:
-                  </div>
-                  <div class="col s5">
-                    <input type="text" tabindex="5" class="focusNext" formControlName="modelo">
-                  </div>
-                </div>
+                  <div class="col s12">
+                    <textarea name="" id="" formControlName="refacciones" style="height: 8rem; padding:0.2rem; resize: none; font-size:0.9rem;"></textarea>
+                  </div>                  
+                </div>   
                 <div class="row">
-                  <div class="col s1">
-                    Kilometraje:
-                  </div>
-                  <div class="col s3">
-                    <input type="text" tabindex="6" class="focusNext" formControlName="km">
-                  </div>
-                  <div class="col s1">
-                    Placa:
-                  </div>
-                  <div class="col s3">
-                    <input type="text" tabindex="7" class="focusNext" formControlName="placas">
-                  </div>
-                  <div class="col s1">
-                    Serie:
-                  </div>
-                  <div class="col s3">
-                    <input type="text" tabindex="8" class="focusNext" formControlName="serie">
+                  <div class="col s12">
+                    <h6 style="font-size: 1rem;">AUTORIZA:</h6>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col s2">
-                    Observaciones:
+                <div class="row" style="margin-bottom: 1.2rem !important; padding-top: 2rem;">
+                  <div class="col s6">
+                    <div class="signature">
+                      <div id="contSign5">
+                        <img src="" id="imgSign5">
+                        <!-- <img src="" id="imgSign"> -->
+                      </div>
+                      <hr>
+                      {{ this.myForm.value.nombre }}
+                    </div>
                   </div>
-                  <div class="col s10">
-                    <input type="text" tabindex="9" class="focusNext" formControlName="observ">
+                  <div class="col s6">
+                    <div class="signature">
+                      <div id="contSign4" >
+                        <img src="" id="imgSign4">
+                      </div>
+                      <hr>
+                      <p>
+                        MASSIVE AUTO COLLISION
+                      </p>
+                    </div>
                   </div>
-                </div>              
-              </div>
-            </div>
-          </div>
-          
-          <div class="row" style="height: 12.97cm; border: 1px solid #9e9e9e; padding-top: 1rem;">
-            <div class="col s4">
-              <img src="assets/logo.jpeg" alt="" style="width: 100%;">
-            </div>
-            <div class="col s4">
-              <div class="datos">
-                <h6 style="font-weight: 600; margin: 0;">VALE DE REFACCIÓN PENDIENTE</h6>
-                <p style="font-size: 1rem; font-weight:600; ">MASSIVE AUTO COLLISION</p>
-              </div>
-            </div>
-            <div class="col s4" style="font-size: 0.7rem; font-weight: 600;">
-              <div class="row">
-                <div class="col s6 right-align" style=" padding-right: 0;">
-                  FOLIO:
-                </div>
-                <div class="col s6">
-                  <input type="text" id="orden" formControlName="orden" class="right-align" style="height: 1rem; color: red; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s6 right-align" style=" padding-right: 0;">
-                  FECHA:
-                </div>
-                <div class="col s6">
-                  <input type="text" id="fecha" formControlName="fecha" class="right-align" style="height: 1rem; font-size: .8rem; font-weight: 700; border-bottom: 0;" readonly>
-                </div>
+                </div>           
               </div>
             </div>
           </div>

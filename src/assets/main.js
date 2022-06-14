@@ -62,10 +62,13 @@ function btn_clear() {
 span.onclick = function () {
     modal.style.display = "none";
     document.getElementById('imgSign').src = signaturePad.toDataURL();
+    document.getElementById('imgSign3').src = signaturePad.toDataURL();
+    document.getElementById('imgSign5').src = signaturePad.toDataURL();
 }
 span2.onclick = function () {
     modal2.style.display = "none";
     document.getElementById('imgSign2').src = signaturePad2.toDataURL();
+    document.getElementById('imgSign4').src = signaturePad2.toDataURL();
 }
 span3.onclick = function () {
     modal3.style.display = "none";

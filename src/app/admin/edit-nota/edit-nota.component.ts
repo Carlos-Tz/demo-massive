@@ -165,11 +165,12 @@ export class EditNotaComponent implements OnInit {
   }
   private getUnit() {
     return this.fb.group({
-      cantidad: [''],
-      importe: [''],
+      refacciones: [''],
+      pintura: [''],
+      hojalateria: [''],
       desc: [''],
-      subtotal: [''],
-      noparte: ['']
+      subtotal: ['']/* ,
+      noparte: [''] */
     });
   }
 
@@ -179,11 +180,15 @@ export class EditNotaComponent implements OnInit {
     // tslint:disable-next-line: forin
     for (let i in units) {
       let totalUnitPrice = 0;
-      totalUnitPrice = ((units[i].cantidad > 0 && units[i].importe > 0) ? units[i].cantidad * units[i].importe : 0);
-     /*  totalUnitPrice += (units[i].cantidad ? units[i].cantidad : 0);
-      totalUnitPrice += (units[i].importe ? units[i].importe : 0);
-      totalUnitPrice += (units[i].pintura ? units[i].pintura : 0);
-      totalUnitPrice += (units[i].glo ? units[i].glo : 0); */
+      if(units[i].refacciones > 0){ 
+        totalUnitPrice += units[i].refacciones;
+      }
+      if(units[i].pintura > 0){
+        totalUnitPrice += units[i].pintura;
+      }
+      if(units[i].hojalateria > 0){
+        totalUnitPrice += units[i].hojalateria;
+      }
       const totalUnitPriceFormatted = this.currencyPipe.transform(totalUnitPrice, 'USD', 'symbol-narrow', '1.2-2');
 
       if (totalUnitPrice !== 0) {
@@ -214,6 +219,10 @@ export class EditNotaComponent implements OnInit {
     this.myForm = this.fb.group({
       nombre: ['', [Validators.required]],
       orden: ['', [Validators.required]],
+      nombre_s: [''],
+      refacciones: [''],
+      cant_num: [''],
+      cant_let: [''],
       domicilio: [''],
       unidad: [''],
       modelo: [''],
@@ -221,13 +230,20 @@ export class EditNotaComponent implements OnInit {
       km: [''],
       serie: [''],
       tel: [''],
+      observ_r: [''],
       observ: [''],
       tarjeta: [false],
       efectivo: [false],
       transferencia: [false],
       presupuesto: [false],
       firma1: [''],
+      firma2: [''],
+      firma3: [''],
+      firma4: [''],
       firma1n: [''],
+      firma2n: [''],
+      firma3n: [''],
+      firma4n: [''],
       fecha: [''],
       antici: [0],
       iva: [false],
@@ -325,7 +341,7 @@ export class EditNotaComponent implements OnInit {
           const ref = this.storage.ref(this.filePathf1);
             ref.delete();
         }
-        this.filePathf1 = `signs_servicar/image_${Date.now()}`;
+        this.filePathf1 = `signs_massive/image_${Date.now()}`;
         const fileRef = this.storage.ref(this.filePathf1);
         this.storage.upload(this.filePathf1, blob).snapshotChanges().pipe(
           finalize(() => {
@@ -339,6 +355,85 @@ export class EditNotaComponent implements OnInit {
       }
     }
   }
+  imgChanged2($event) {
+    if ($event.target.src) {
+      const imgURL = $event.target.src;
+      if (imgURL.startsWith('data:image') ) {
+        const block = imgURL.split(';');
+        const contentType = block[0].split(':')[1];
+        const realData = block[1].split(',')[1];
+        const blob = this.b64toBlob(realData, contentType);
+        if (this.filePathf2 !== '') {
+          const ref = this.storage.ref(this.filePathf2);
+            ref.delete();
+        }
+        this.filePathf2 = `signs_massive/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathf2);
+        this.storage.upload(this.filePathf2, blob).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({firma2: url});
+              this.myForm.patchValue({firma2n: this.filePathf2});
+              this.toastr.success('Firma Actualizada!');
+            });
+          })
+        ).subscribe();
+      }
+    }
+  }
+  imgChanged3($event) {
+    if ($event.target.src) {
+      const imgURL = $event.target.src;
+      if (imgURL.startsWith('data:image') ) {
+        const block = imgURL.split(';');
+        const contentType = block[0].split(':')[1];
+        const realData = block[1].split(',')[1];
+        const blob = this.b64toBlob(realData, contentType);
+        if (this.filePathf3 !== '') {
+          const ref = this.storage.ref(this.filePathf3);
+            ref.delete();
+        }
+        this.filePathf3 = `signs_massive/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathf3);
+        this.storage.upload(this.filePathf3, blob).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({firma3: url});
+              this.myForm.patchValue({firma3n: this.filePathf3});
+              this.toastr.success('Firma Actualizada!');
+            });
+          })
+        ).subscribe();
+      }
+    }
+  }
+  imgChanged4($event) {
+    if ($event.target.src) {
+      const imgURL = $event.target.src;
+      if (imgURL.startsWith('data:image') ) {
+        const block = imgURL.split(';');
+        const contentType = block[0].split(':')[1];
+        const realData = block[1].split(',')[1];
+        const blob = this.b64toBlob(realData, contentType);
+        if (this.filePathf4 !== '') {
+          const ref = this.storage.ref(this.filePathf4);
+          ref.delete();
+        }
+        this.filePathf4 = `signs_massive/image_${Date.now()}`;
+        const fileRef = this.storage.ref(this.filePathf4);
+        this.storage.upload(this.filePathf4, blob).snapshotChanges().pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe((url) => {
+              this.myForm.patchValue({firma4: url});
+              this.myForm.patchValue({firma4n: this.filePathf4});
+              this.toastr.success('Firma Actualizada!');
+            });
+          })
+          ).subscribe();
+      }
+    }
+  }
+
 
   b64toBlob(b64Data, contentType, sliceSize?) {
     contentType = contentType || '';

@@ -27,6 +27,7 @@ export interface Orden {
     temper: boolean;
     potosi: boolean;
     qualitas: boolean;
+    general: boolean;
     /* tall: boolean;
     presion: boolean;
     volante: boolean; */

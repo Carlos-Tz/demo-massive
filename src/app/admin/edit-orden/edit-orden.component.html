@@ -11,19 +11,39 @@
             </div>
             <div class="col s4">
               <div class="datos">
-                <h5 style="font-weight: 600; margin-top: 0 !important; margin-bottom: 0.3rem !important;">SERVICAR</h5>
-                <p>SERVICIO MECÁNICO AUTOMOTRIZ</p>
-                <p>Periférico Paseo de la República #1538</p>
-                <p>Col. El Realito Morelia Mich.</p>
-                <p>Tel. 443 261 9950</p>
-                <p>gilbert_mechanic@hotmail.com</p>
+                <h6 style="font-weight: 600; margin-top: 0 !important; margin-bottom: 0 !important;">MASSIVE</h6>
+                <h6 style="font-weight: 600; margin-top: 0 !important; margin-bottom: 0 !important;">AUTO COLLISION</h6>
+                <p>Manantial de agua fría No. 30-A <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">location_on</span></p>
+                <p>Col. Ampliación Manantiales</p>
+                <p>CP. 58188 Morelia Mich.</p>
+                <div style="display:inline-flex;">
+                  <div>
+                    <p>443 310 1054 <span class="material-icons" style="font-size: 1.1rem; vertical-align: middle;">phone</span> | 443 846 9605</p></div>
+                  <div>
+                    <img style="height: 1.3rem; padding-left: 0.1rem;" src="https://img.icons8.com/color/48/undefined/whatsapp--v1.png"/>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="col s4">
                 <div>
                   <h6 class="center-align" style="margin: 0 !important;"><b>ORDEN DE REPARACIÓN</b></h6>
                   <input type="text" id="orden" tabindex="0" placeholder="**" formControlName="orden" class="orden" readonly>
-              </div>
+                </div>
+                <div class="row" style="padding-top: 0.5rem;">
+                  <div class="col s4" (click)="potosi_()">
+                    <img *ngIf="!pot" class="responsive-img" src="assets/potosi2.png" alt="" style="padding-top: 0.4rem;">
+                    <img *ngIf="pot" class="responsive-img" src="assets/potosi.png" alt="" style="padding-top: 0.4rem;">
+                  </div>
+                  <div class="col s4" (click)="qualitas_()" style="padding-left: 0 !important;">
+                    <img *ngIf="!qua" class="responsive-img" src="assets/Qualitas2.png" alt="" style="padding-top: 0.4rem;">
+                    <img *ngIf="qua" class="responsive-img" src="assets/Qualitas1.png" alt="" style="padding-top: 0.4rem;">
+                  </div>
+                  <div class="col s4" (click)="general_()" style="padding-left: 0 !important;">
+                    <img *ngIf="!gen" class="responsive-img" src="assets/general2.png" alt="" style="padding-top: 0.4rem;">
+                    <img *ngIf="gen" class="responsive-img" src="assets/general.png" alt="" style="padding-top: 0.4rem;">
+                  </div>
+                </div>
               <!-- <div>
                 <p class="right-align" style="margin: 0 !important;"><b>ORDEN DE TRABAJO</b>
                 <input type="number" tabindex="0" class="orden focusNext" placeholder="**" formControlName="orden" min="0" step="1" style="width: 3cm;">
@@ -202,49 +222,47 @@
           </div>
           <div class="row s12">
             <!-- <div class="col d-flex"> -->
-              <div class="col" (click)="airbag()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="airbag()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!air" class="responsive-img" src="assets/airbag1.jpg" alt="">
                 <img *ngIf="air" class="responsive-img" src="assets/airbag2.jpg" alt="">
               </div>
-              <div class="col" (click)="engine()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="engine()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!eng" class="responsive-img" src="assets/engine1.jpg" alt="">
                 <img *ngIf="eng" class="responsive-img" src="assets/engine2.jpg" alt="">
               </div>
-              <div class="col" (click)="abs_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="abs_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!abs" class="responsive-img" src="assets/ABS1.jpg" alt="">
                 <img *ngIf="abs" class="responsive-img" src="assets/ABS2.jpg" alt="">
               </div>
-              <div class="col" (click)="oil_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="oil_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!oil" class="responsive-img" src="assets/oil1.jpg" alt="">
                 <img *ngIf="oil" class="responsive-img" src="assets/oil2.jpg" alt="">
               </div>
-              <div class="col" (click)="battery_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="battery_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!bat" class="responsive-img" src="assets/battery1.jpg" alt="">
                 <img *ngIf="bat" class="responsive-img" src="assets/battery2.jpg" alt="">
               </div>
-              <div class="col" (click)="cintu_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="cintu_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!cin" class="responsive-img" src="assets/cinturon1.jpg" alt="">
                 <img *ngIf="cin" class="responsive-img" src="assets/cinturon2.jpg" alt="">
               </div>
-              <div class="col" (click)="freno_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="freno_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!fre" class="responsive-img" src="assets/frenodemano1.jpg" alt="">
                 <img *ngIf="fre" class="responsive-img" src="assets/frenodemano2.jpg" alt="">
               </div>
-              <div class="col" (click)="lights_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="lights_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!lig" class="responsive-img" src="assets/lights1.jpg" alt="">
                 <img *ngIf="lig" class="responsive-img" src="assets/lights2.jpg" alt="">
               </div>
-              <div class="col" (click)="stabil_()" style="padding-left: 0 !important; width: 7.7%;">
+              <div class="col" (click)="stabil_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!sta" class="responsive-img" src="assets/stability1.jpg" alt="">
                 <img *ngIf="sta" class="responsive-img" src="assets/stability2.jpg" alt="">
               </div>
-              <div class="col" (click)="temper_()" style="padding-left: 0 !important; width: 7.7%; border-right: 1px solid #9e9e9e;">
+              <div class="col" (click)="temper_()" style="padding-left: 0 !important; width: 10%;">
                 <img *ngIf="!tem" class="responsive-img" src="assets/temperatura1.jpg" alt="">
                 <img *ngIf="tem" class="responsive-img" src="assets/temperatura2.jpg" alt="">
               </div>
-              <div class="col" style="padding-left: 0 !important; width: 3%;">
-                <!-- <img *ngIf="!tal" class="responsive-img" src="assets/tall1.png" alt="">
-                <img *ngIf="tal" class="responsive-img" src="assets/tall2.png" alt=""> -->
+              <!-- <div class="col" style="padding-left: 0 !important; width: 3%;">
               </div>
               <div class="col" (click)="potosi_()" style="padding-left: 0 !important; width: 8%;">
                 <img *ngIf="!pot" class="responsive-img" src="assets/potosi2.png" alt="" style="padding-top: 0.4rem;">
@@ -253,18 +271,6 @@
               <div class="col" (click)="qualitas_()" style="padding-left: 0 !important; width: 12%;">
                 <img *ngIf="!qua" class="responsive-img" src="assets/Qualitas2.png" alt="" style="padding-top: 0.4rem;">
                 <img *ngIf="qua" class="responsive-img" src="assets/Qualitas1.png" alt="" style="padding-top: 0.4rem;">
-              </div>
-              <!-- <div class="col" (click)="tall_()" style="padding-left: 0 !important; width: 7.7%;">
-                <img *ngIf="!tal" class="responsive-img" src="assets/tall1.png" alt="">
-                <img *ngIf="tal" class="responsive-img" src="assets/tall2.png" alt="">
-              </div>
-              <div class="col" (click)="presion_()" style="padding-left: 0 !important; width: 7.7%;">
-                <img *ngIf="!pre" class="responsive-img" src="assets/presion1.png" alt="">
-                <img *ngIf="pre" class="responsive-img" src="assets/presion2.png" alt="">
-              </div>
-              <div class="col" (click)="volante_()" style="padding-left: 0 !important; width: 7.5%;">
-                <img *ngIf="!vol" class="responsive-img" src="assets/vola1.png" alt="">
-                <img *ngIf="vol" class="responsive-img" src="assets/vola2.png" alt="">
               </div> -->
             <!-- </div> -->
           </div>
@@ -459,7 +465,7 @@
                 </div>
                 <hr>
                 <p>
-                  SERVICAR
+                  MASSIVE AUTO COLLISION
                 </p>
               </div>
             </div>
@@ -473,7 +479,7 @@
       <div class="page">
         <div class="inner">
           <div class="section6">
-            <h3 id="sub_title" style="margin-top: 0;">ESTADO DEL VEHÍCULO</h3><br>
+            <h3 id="sub_title" style="margin-top: 0;">DAÑOS A REPARAR</h3><br>
             <div class="table">
               <div class="tr thead">
                   <div class="td grey" style="color: white;">Imagen</div>
@@ -482,7 +488,6 @@
               <div class="tr">
                 <div class="td">
                     <div class="image-container" id="ci1" [ngStyle]="{'background-image': 'url('+myForm.value.img1+')'}">
-                      <!-- <span class="material-icons">backup</span> -->
                         <input type="file" accept="image/*" name="img1" onchange="showMyImage(this)" (change)="changeListener($event)">
                       </div>
                 </div>
@@ -491,7 +496,6 @@
                       <input type="file" accept="image/*" name="img4" onchange="showMyImage(this)" (change)="changeListener($event)">
                     </div>
                 </div>
-                <!-- <div class="td "><textarea name="img1d" rows="11" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc1"></textarea></div> -->
               </div>
               <div class="tr">
                 <div class="td">
@@ -500,13 +504,12 @@
                       </div>
                 </div>
                 <div class="td ">
-                  <div class="image-container" id="ci5" [ngStyle]="{'background-image': 'url('+myForm.value.img5+')'}">
-                      <input type="file" accept="image/*" name="img5" onchange="showMyImage(this)" (change)="changeListener($event)">
+                  <div class="image-container" id="ci3" [ngStyle]="{'background-image': 'url('+myForm.value.img3+')'}">
+                      <input type="file" accept="image/*" name="img3" onchange="showMyImage(this)" (change)="changeListener($event)">
                     </div>
+                </div>
               </div>
-                <!-- <div class="td "><textarea name="img2d"  rows="11" wrap="soft" tabindex="15" class="txa focusNext" formControlName="desc2"></textarea></div> -->
-              </div>
-              <div class="tr">
+              <!-- <div class="tr">
                 <div class="td">
                     <div class="image-container" id="ci3" [ngStyle]="{'background-image': 'url('+myForm.value.img3+')'}">
                         <input type="file" accept="image/*" name="img3" onchange="showMyImage(this)" (change)="changeListener($event)">
@@ -517,15 +520,14 @@
                       <input type="file" accept="image/*" name="img6" onchange="showMyImage(this)" (change)="changeListener($event)">
                     </div>
                 </div>
-                <!-- <div class="td "><textarea name="img3d"  rows="11" wrap="soft" tabindex="16" class="txa focusNext" formControlName="desc3"></textarea></div> -->
-              </div>
+              </div> -->
               <div class="tr thead">
-                <div class="td grey" style="color: white;">Descripción</div>
-                <div class="td grey" style="color: white;">Descripción</div>
+                <div class="td grey" style="color: white;">Descripción daños a reparar</div>
+                <div class="td grey" style="color: white;">Descripción daños preexistentes</div>
               </div>
               <div class="tr">
-                <div class="td "><textarea name="img1d" rows="11" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc1"></textarea></div>
-                <div class="td "><textarea name="img2d" rows="11" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc2"></textarea></div>
+                <div class="td "><textarea name="img1d" rows="18" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc1"></textarea></div>
+                <div class="td "><textarea name="img2d" rows="18" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc2"></textarea></div>
               </div>
                 <!-- <div class="td ">
                     <div class="image-container" id="ci4" [ngStyle]="{'background-image': 'url('+myForm.value.img4+')'}">
@@ -540,11 +542,11 @@
         </div>
       </div>
     </section>
-    <section>
+    <!-- <section>
       <div class="page">
         <div class="inner">
           <div class="section6">
-            <h3 id="sub_title" style="margin-top: 0;">ESTADO DEL VEHÍCULO</h3><br>
+            <h3 id="sub_title" style="margin-top: 0;">DAÑOS PREEXISTENTES</h3><br>
             <div class="table">
               <div class="tr thead">
                   <div class="td grey" style="color: white;">Imagen</div>
@@ -561,7 +563,6 @@
                       <input type="file" accept="image/*" name="img10" onchange="showMyImage(this)" (change)="changeListener($event)">
                     </div>
                 </div>
-                <!-- <div class="td "><textarea name="img5d" rows="11" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc5"></textarea></div> -->
               </div>
               <div class="tr">
                 <div class="td">
@@ -574,7 +575,6 @@
                       <input type="file" accept="image/*" name="img11" onchange="showMyImage(this)" (change)="changeListener($event)">
                     </div>
                 </div>
-                <!-- <div class="td "><textarea name="img6d"  rows="11" wrap="soft" tabindex="15" class="txa focusNext" formControlName="desc6"></textarea></div> -->
               </div>
               <div class="tr">
                 <div class="td">
@@ -587,7 +587,6 @@
                       <input type="file" accept="image/*" name="img12" onchange="showMyImage(this)" (change)="changeListener($event)">
                     </div>
                 </div>
-                <!-- <div class="td "><textarea name="img7d"  rows="11" wrap="soft" tabindex="16" class="txa focusNext" formControlName="desc7"></textarea></div> -->
               </div>
               <div class="tr thead">
                 <div class="td grey" style="color: white;">Descripción</div>
@@ -596,12 +595,6 @@
               <div class="tr">
                 <div class="td "><textarea name="img3d" rows="11" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc3"></textarea></div>
                 <div class="td "><textarea name="img4d" rows="11" wrap="soft" tabindex="14" class="txa focusNext" formControlName="desc4"></textarea></div>
-                <!-- <div class="td ">
-                    <div class="image-container" id="ci8" [ngStyle]="{'background-image': 'url('+myForm.value.img8+')'}">
-                        <input type="file" accept="image/*" name="img8" onchange="showMyImage(this)" (change)="changeListener($event)">
-                      </div>
-                </div>
-                <div class="td  "><textarea name="img8d" rows="11" wrap="soft" tabindex="17" class="txa focusNext" formControlName="desc8"></textarea></div> -->
               </div>
             </div>
           </div>
@@ -609,7 +602,7 @@
     
         </div>
       </div>
-    </section>
+    </section> -->
 
 
     <section>
@@ -648,9 +641,9 @@
             <div class="row" style="margin-bottom: 2rem !important;">
                 <div class="col s6">
                   <div class="signature">
-                    <div id="contSign3" onclick="btn_click3()">
+                    <div id="contSign3">
                       <!-- <img src="" id="imgSign3" (load)="imgChanged3($event)"> -->
-                    <img src="{{myForm.value.firma3}}" id="imgSign3" (load)="imgChanged3($event)">
+                    <img src="{{myForm.value.firma1}}" id="imgSign3">
                       <!-- <img src="" id="imgSign3"> -->
                     </div>
                     <hr>
@@ -659,13 +652,13 @@
                 </div>
                 <div class="col s6">
                   <div class="signature">
-                    <div id="contSign4" onclick="btn_click4()">
+                    <div id="contSign4">
                       <!-- <img src="" id="imgSign4" (load)="imgChanged4($event)"> -->
-                    <img src="{{myForm.value.firma4}}" id="imgSign4" (load)="imgChanged4($event)">
+                    <img src="{{myForm.value.firma2}}" id="imgSign4">
                       <!-- <img src="" id="imgSign4"> -->
                     </div>
                     <hr>
-                    SERVICAR    
+                    MASSIVE AUTO COLLISION    
                   </div>
                 </div>
               </div>              
